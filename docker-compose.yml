@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg17
+    container_name: vac_postgres
+    environment:
+      POSTGRES_DB: vac_chatbot
+      POSTGRES_USER: vac_user
+      POSTGRES_PASSWORD: geslo123
+
+    ports:
+      - "5432:5432"
+    volumes:
+      - vac_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  vac_postgres_data:
